@@ -1,16 +1,10 @@
 return {
   -- orgmode plugins
   { import = "plugins.orgmode" },
-  { import = "plugins.org-bullets" },
-  { import = "plugins.org-modern" },
-  { import = "plugins.org-roam" },
 
   -- themes
   -- i only rlly use these three
-  { import = "plugins.gruvbox" },
-  { import = "plugins.papercolor" },
-  { import = "plugins.everforest" },
-  { import = "plugins.rose-pine" },
+  { import = "plugins.themes" },
   -- { import = "plugins.onedark" },
   -- { import = "plugins.solarized-osaka" },
   -- { import = "plugins.onedarkpro" },
