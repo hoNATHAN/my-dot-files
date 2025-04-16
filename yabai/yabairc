@@ -1,0 +1,65 @@
+# global settings
+yabai -m config                                 \
+    external_bar                 off:40:0       \
+    menubar_opacity              1.0            \
+    mouse_follows_focus          off            \
+    focus_follows_mouse          off            \
+    display_arrangement_order    default        \
+    window_origin_display        default        \
+    window_placement             second_child   \
+    window_zoom_persist          on             \
+    window_shadow                on             \
+    window_animation_duration    0.0            \
+    window_animation_easing      ease_out_circ  \
+    window_opacity_duration      0.0            \
+    active_window_opacity        1.0            \
+    normal_window_opacity        0.90           \
+    window_opacity               off            \
+    insert_feedback_color        0xffd75f5f     \
+    split_ratio                  0.50           \
+    split_type                   auto           \
+    auto_balance                 off            \
+    window_gap                   06             \
+    layout                       bsp            \
+    mouse_modifier               fn             \
+    mouse_action1                move           \
+    mouse_action2                resize         \
+    mouse_drop_action            swap
+
+# padding
+yabai -m config top_padding 20
+yabai -m config bottom_padding 20
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 20
+
+# resizing
+shift + alt - a : yabai -m window --resize left:-20:0
+shift + alt - d : yabai -m window --resize right:-20:0
+shift + alt - w : yabai -m window --resize top:0:-20
+shift + alt - s : yabai -m window --resize bottom:0:20
+# decrease window size
+shift + cmd - s : yabai -m window --resize bottom:0:-20
+shift + cmd - w : yabai -m window --resize top:0:20
+shift + cmd - a : yabai -m window --resize left:20:0
+shift + cmd - d : yabai -m window --resize right:20:0
+
+
+# mouse settings
+yabai -m config mouse_follows_focus on
+
+yabai -m config mouse_modifier alt
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+
+yabai -m mouse_drop_action swap
+
+# disable specific apps 
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Riot Client$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
+yabai -m rule --add app="^Preview$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Discord$" manage=off
