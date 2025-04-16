@@ -21,6 +21,7 @@ return {
   -- papercolor
   {
     "NLKNguyen/papercolor-theme",
+    name = "papercolor",
   },
 
   -- everforest
@@ -103,119 +104,6 @@ return {
   -- plenary (for some reason i need it for neorg)
   {
     "nvim-lua/plenary.nvim",
-  },
-
-  -- telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-
-  -- nvim orgmode
-  {
-    "nvim-orgmode/orgmode",
-    event = "VeryLazy",
-    ft = { "org" },
-    config = function()
-      require("orgmode").setup({
-        org_agenda_files = "~/dev/notes/**/*",
-        org_default_notes_file = "~/dev/notes/refile.org",
-      })
-
-      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-      -- add ~org~ to ignore_install
-      -- require('nvim-treesitter.configs').setup({
-      --   ensure_installed = 'all',
-      --   ignore_install = { 'org' },
-      -- })
-    end,
-  },
-
-  -- org bullets
-  {
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup({
-        concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible
-        symbols = {
-          list = "•",
-          headlines = { "◉", "○", "✸", "✿" },
-          -- headlines = function(default_list)
-          --   table.insert(default_list, "♥")
-          --   return default_list
-          -- end,
-          -- or false to disable the symbol. Works for all symbols
-          -- headlines = false,
-          -- or a table of tables that provide a name
-          -- and (optional) highlight group for each headline level
-          -- headlines = {
-          --   { "◉", "MyBulletL1" }
-          --   { "○", "MyBulletL2" },
-          --   { "✸", "MyBulletL3" },
-          --   { "✿", "MyBulletL4" },
-          -- },
-          checkboxes = {
-            done = { "✓", "@org.keyword.done" },
-            todo = { " ", "@org.keyword.todo" },
-          },
-        },
-      })
-    end,
-  },
-
-  -- org-modern menu
-  {
-    "danilshvalov/org-modern.nvim",
-    ft = "org",
-    lazy = false,
-    config = function()
-      local Menu = require("org-modern.menu")
-
-      require("orgmode").setup({
-        ui = {
-          menu = {
-            handler = function(data)
-              Menu:new({
-                window = {
-                  margin = { 1, 0, 1, 0 },
-                  padding = { 0, 1, 0, 1 },
-                  title_pos = "center",
-                  border = "single",
-                  zindex = 1000,
-                },
-                icons = {
-                  separator = "➜",
-                },
-              }):open(data)
-            end,
-          },
-        },
-      })
-    end,
-  },
-
-  -- org roam
-  {
-    "chipsenkbeil/org-roam.nvim",
-    tag = "0.1.1",
-    dependencies = {
-      {
-        "nvim-orgmode/orgmode",
-        tag = "0.3.7",
-      },
-    },
-    config = function()
-      require("org-roam").setup({
-        directory = "~/org_roam_files",
-        -- optional
-        org_files = {
-          "~/another_org_dir",
-          "~/some/folder/*.org",
-          "~/a/single/org_file.org",
-        },
-      })
-    end,
   },
 
   -- neo org
@@ -324,24 +212,7 @@ return {
     },
   },
 
-  {
-    "frabjous/knap",
-    lazy = false,
-    config = function()
-      -- Configure KNAP settings
-      vim.g.knap_settings = {
-        mdoutputext = "pdf",
-        mdtopdf = "pandoc -o %outputfile% --pdf-engine=xelatex",
-        mdtopdfviewerlaunch = "zathura %outputfile%",
-        mdtopdfviewerrefresh = "none",
-        mdtopdfbufferasstdin = true,
-      }
-    end,
-  },
-
   -- markdown preview
-
-  -- install with yarn or npm
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
