@@ -1,6 +1,14 @@
 *.git
 
 .DS_Store
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
 
 # idk why i have this but im just gonna git ignore
 StardewValley/
