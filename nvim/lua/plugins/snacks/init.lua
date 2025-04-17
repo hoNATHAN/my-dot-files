@@ -11,8 +11,8 @@ return {
           header = [[
 
 
-+++++++00000                                                  remove the eye from the medium                                      
-                                                                   and the art will succeed
++++++++00000                                                                                        
+                                                                                                    
 
                         ....                                            ....                        
                       .:@%@@@=.                                       :@@@%@=.                      

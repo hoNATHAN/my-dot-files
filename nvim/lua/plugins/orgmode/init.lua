@@ -7,7 +7,7 @@ return {
     config = function()
       require("orgmode").setup({
         org_agenda_files = "~/dev/notes/**/*",
-        org_default_notes_file = "~/dev/notes/refile.org",
+        org_default_notes_file = "~/dev/notes/todo/todo.org",
       })
 
       -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
@@ -82,7 +82,7 @@ return {
         concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible
         symbols = {
           list = "•",
-          headlines = { "◉", "○", "✸", "✿" },
+          headlines = { "◈", "◆", "◇", "⋄" },
           checkboxes = {
             done = { "✓", "@org.keyword.done" },
             todo = { " ", "@org.keyword.todo" },
