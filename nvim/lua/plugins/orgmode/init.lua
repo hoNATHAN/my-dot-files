@@ -10,12 +10,20 @@ return {
         org_default_notes_file = "~/dev/notes/todo/todo.org",
       })
 
-      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-      -- add ~org~ to ignore_install
-      -- require('nvim-treesitter.configs').setup({
-      --   ensure_installed = 'all',
-      --   ignore_install = { 'org' },
-      -- })
+      require("blink.cmp").setup({
+        sources = {
+          per_filetype = {
+            org = { "orgmode" },
+          },
+          providers = {
+            orgmode = {
+              name = "Orgmode",
+              module = "orgmode.org.autocompletion.blink",
+              fallbacks = { "buffer" },
+            },
+          },
+        },
+      })
     end,
   },
 
@@ -23,21 +31,9 @@ return {
   {
     "chipsenkbeil/org-roam.nvim",
     tag = "0.1.1",
-    dependencies = {
-      {
-        "nvim-orgmode/orgmode",
-        tag = "0.3.7",
-      },
-    },
     config = function()
       require("org-roam").setup({
-        directory = "~/org_roam_files",
-        -- optional
-        org_files = {
-          "~/another_org_dir",
-          "~/some/folder/*.org",
-          "~/a/single/org_file.org",
-        },
+        directory = "~/dev/notes/roam",
       })
     end,
   },
@@ -82,7 +78,7 @@ return {
         concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible
         symbols = {
           list = "•",
-          headlines = { "◈", "◆", "◇", "⋄" },
+          headlines = { "◈", "◆", "◇", "◆" },
           checkboxes = {
             done = { "✓", "@org.keyword.done" },
             todo = { " ", "@org.keyword.todo" },

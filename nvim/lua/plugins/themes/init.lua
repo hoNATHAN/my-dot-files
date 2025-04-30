@@ -73,7 +73,6 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require("nordic").load()
       require("nordic").setup({
         transparent = {
           bg = true,
@@ -82,19 +81,4 @@ return {
       })
     end,
   },
-
-  -- {
-  --   "shaunsingh/nord.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("nord").setup({
-  --       nord_contrast = true,
-  --       nord_borders = true,
-  --       nord_disabled_background = true,
-  --       nord_italics = true,
-  --       nord_bold = true,
-  --     })
-  --   end,
-  -- },
 }
