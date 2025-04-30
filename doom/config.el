@@ -32,10 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(straight-use-package
-  '(everforest) :type git :repo "https://git.sr.ht/~theorytoe/everforest-theme")
-
-(load-theme 'everforest-hard-dark t)
+(load-theme 'doom-nord-aurora t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -77,3 +74,9 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(set-face-attribute 'default nil :height 160)
+
+;; (set-face-background 'default "mac:windowBackgroundColor")
+(set-frame-parameter (selected-frame) 'alpha '(85 85))
+(add-to-list 'default-frame-alist '(alpha 85 85))
